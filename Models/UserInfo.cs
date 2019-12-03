@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SomeCompanyEmployees.Models
 {
@@ -18,11 +15,11 @@ namespace SomeCompanyEmployees.Models
 		public DateTime RegistrationDate { get; set; }
 		public DateTime LastUpdateDate { get; set; }
 
-		private static int globalUserID = 0;
+		private static int _globalUserId;
 
 		public UserInfo()
 		{
-			Id = Interlocked.Increment(ref globalUserID);
+			Id = Interlocked.Increment(ref _globalUserId);
 		}
 	}
 }

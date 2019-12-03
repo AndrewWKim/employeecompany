@@ -1,5 +1,4 @@
 ﻿using SomeCompanyEmployees.Repositories.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,7 +11,7 @@ namespace SomeCompanyEmployees.Repositories
 	{
 		public async Task<IEnumerable<UserInfo>> GetUsersAsync()
 		{
-			return await Task.Run(() => Initialize.CurrentListOfUsers.Select(x => x));
+			return await Task.Run(() => Initialize.CurrentListOfUsers);
 		}
 
 		public async Task<UserInfo> FindUserById(int id)
@@ -40,7 +39,7 @@ namespace SomeCompanyEmployees.Repositories
 			await Task.Run(() => Initialize.CurrentListOfUsers[Initialize.CurrentListOfUsers.FindIndex(ind => ind.Id == userInfo.Id)] = userInfo);
 		}
 
-		public Boolean IsUserExists(int id)
+		public bool IsUserExists(int id)
 		{
 			return Initialize.CurrentListOfUsers.Any(e => e.Id == id);
 		}

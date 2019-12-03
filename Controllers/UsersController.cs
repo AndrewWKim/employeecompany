@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SomeCompanyEmployees.Entities;
 using SomeCompanyEmployees.Models;
 using SomeCompanyEmployees.Services.Interfaces;
@@ -27,9 +25,9 @@ namespace SomeCompanyEmployees.Controllers
 			var listOfUsersForTableView = await _userService.GetUsersForTableViewAsync();
 			if (listOfUsersForTableView == null)
 			{
-				return new List<UserForTableView>();
+				return NotFound();
 			}
-			return (List<UserForTableView>)listOfUsersForTableView;
+			return Ok(listOfUsersForTableView);
 		}
 
 		[HttpGet("user/{id}")]
@@ -39,10 +37,10 @@ namespace SomeCompanyEmployees.Controllers
 
 			if (currentUser == null)
 			{
-				return new UserInfo();
+				return NotFound();
 			}
 
-			return currentUser;
+			return Ok(currentUser);
 		}
 
 		[HttpPut("{id}")]
@@ -63,10 +61,9 @@ namespace SomeCompanyEmployees.Controllers
 				{
 					return NotFound();
 				}
-				throw;
 			}
 
-			return NoContent();
+			return Ok();
 		}
 
 		[HttpPost]
@@ -82,7 +79,7 @@ namespace SomeCompanyEmployees.Controllers
 		{
 			await _userService.RemoveUserAsync(id);
 
-			return new UserInfo();
+			return Ok();
 		}
 	}
 }

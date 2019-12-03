@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SomeCompanyEmployees.Entities;
 using SomeCompanyEmployees.Models;
 
@@ -19,7 +17,7 @@ namespace SomeCompanyEmployees.Initiation
 			jim.Patronymic = "Gogolevich";
 			jim.Age = 25;
 			jim.Position = "Developer";
-			jim.Gender = Gender.male.ToString();
+			jim.Gender = Gender.Male.ToString();
 			jim.RegistrationDate = DateTime.Now;
 			jim.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(jim);
@@ -30,7 +28,7 @@ namespace SomeCompanyEmployees.Initiation
 			pol.Patronymic = "Gogolevich";
 			pol.Age = 35;
 			pol.Position = "Developer";
-			pol.Gender = Gender.male.ToString();
+			pol.Gender = Gender.Male.ToString();
 			pol.RegistrationDate = DateTime.Now;
 			pol.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(pol);
@@ -41,7 +39,7 @@ namespace SomeCompanyEmployees.Initiation
 			nina.Patronymic = "Gogolevich";
 			nina.Age = 25;
 			nina.Position = "Developer";
-			nina.Gender = Gender.female.ToString();
+			nina.Gender = Gender.Female.ToString();
 			nina.RegistrationDate = DateTime.Now;
 			nina.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(nina);
@@ -52,7 +50,7 @@ namespace SomeCompanyEmployees.Initiation
 			galia.Patronymic = "Gogolevich";
 			galia.Age = 25;
 			galia.Position = "Developer";
-			galia.Gender = Gender.female.ToString();
+			galia.Gender = Gender.Female.ToString();
 			galia.RegistrationDate = DateTime.Now;
 			galia.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(galia);
@@ -63,7 +61,7 @@ namespace SomeCompanyEmployees.Initiation
 			anna.Patronymic = "Gogolevich";
 			anna.Age = 18;
 			anna.Position = "Developer";
-			anna.Gender = Gender.female.ToString();
+			anna.Gender = Gender.Female.ToString();
 			anna.RegistrationDate = DateTime.Now;
 			anna.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(anna);
@@ -74,7 +72,7 @@ namespace SomeCompanyEmployees.Initiation
 			max.Patronymic = "Gogolevich";
 			max.Age = 25;
 			max.Position = "Developer";
-			max.Gender = Gender.male.ToString();
+			max.Gender = Gender.Male.ToString();
 			max.RegistrationDate = DateTime.Now;
 			max.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(max);
@@ -85,7 +83,7 @@ namespace SomeCompanyEmployees.Initiation
 			ford.Patronymic = "Gogolevich";
 			ford.Age = 25;
 			ford.Position = "Developer";
-			ford.Gender = Gender.male.ToString();
+			ford.Gender = Gender.Male.ToString();
 			ford.RegistrationDate = DateTime.Now;
 			ford.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(ford);
@@ -96,7 +94,7 @@ namespace SomeCompanyEmployees.Initiation
 			curt.Patronymic = "Gogolevich";
 			curt.Age = 67;
 			curt.Position = "Developer";
-			curt.Gender = Gender.male.ToString();
+			curt.Gender = Gender.Male.ToString();
 			curt.RegistrationDate = DateTime.Now;
 			curt.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(curt);

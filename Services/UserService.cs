@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SomeCompanyEmployees.Entities;
@@ -53,7 +52,7 @@ namespace SomeCompanyEmployees.Services
 			await _userRepository.EditUserAsync(userInfo);
 		}
 
-		public Boolean IsUserExists(int id)
+		public bool IsUserExists(int id)
 		{
 			return _userRepository.IsUserExists(id);
 		}
