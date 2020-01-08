@@ -9,6 +9,8 @@ namespace SomeCompanyEmployees
 		public static void Main(string[] args)
 		{
 			Initialize.InitializeUsers();
+			Initialize.InitializeProducts();
+			Initialize.InitializeOrders();
 			CreateHostBuilder(args).Build().Run();
 		}
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SomeCompanyEmployees.Entities;
 using SomeCompanyEmployees.Models;
 
@@ -8,6 +9,8 @@ namespace SomeCompanyEmployees.Initiation
 	public static class Initialize
 	{
 		public static List<UserInfo> CurrentListOfUsers = new List<UserInfo>();
+		public static List<Product> CurrentListOfProducts = new List<Product>();
+		public static List<Order> CurrentListOfOrders = new List<Order>();
 
 		public static void InitializeUsers()
 		{
@@ -23,7 +26,7 @@ namespace SomeCompanyEmployees.Initiation
 			CurrentListOfUsers.Add(jim);
 
 			var pol = new UserInfo();
-			pol.FirstName = "Pol";
+			pol.FirstName = "Andrew";
 			pol.LastName = "Smith";
 			pol.Patronymic = "Gogolevich";
 			pol.Age = 35;
@@ -98,6 +101,40 @@ namespace SomeCompanyEmployees.Initiation
 			curt.RegistrationDate = DateTime.Now;
 			curt.LastUpdateDate = DateTime.Now;
 			CurrentListOfUsers.Add(curt);
+		}
+
+		public static void InitializeProducts()
+		{
+			var car = new Product();
+			car.Price = 3000.5;
+			car.Name = "Car";
+			CurrentListOfProducts.Add(car);
+
+			var dog = new Product();
+			dog.Price = 30;
+			dog.Name = "Dog";
+			CurrentListOfProducts.Add(dog);
+
+			var plane = new Product();
+			plane.Price = 987654321;
+			plane.Name = "Plane";
+			CurrentListOfProducts.Add(plane);
+		}
+
+		public static void InitializeOrders()
+		{
+			var order1 = new Order(1);
+			order1.AddProduct(CurrentListOfProducts.First());
+			CurrentListOfOrders.Add(order1);
+
+			var order2 = new Order(2);
+			order2.AddProduct(CurrentListOfProducts.Last());
+			order2.AddProduct(CurrentListOfProducts.First());
+			CurrentListOfOrders.Add(order2);
+
+			var order3 = new Order(3);
+			order3.AddProduct(CurrentListOfProducts.First(x=> x.Id == 2));
+			CurrentListOfOrders.Add(order3);
 		}
 	}
 }
